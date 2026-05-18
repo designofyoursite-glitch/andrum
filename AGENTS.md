@@ -1,6 +1,8 @@
 # Andrum AI Content Studio
 
-Andrum is an Instagram content project. This workspace is a simple operating system for planning, generating, editing, and storing content.
+Andrum is a content and marketing knowledge workspace. It started as an Instagram content project, but the same brand, product, strategy, and audience materials should also support email, landing pages, ads, product copy, scripts, and broader marketing work.
+
+This workspace is a simple operating system for planning, generating, editing, and storing content.
 
 ## Working Principles
 
@@ -9,9 +11,10 @@ Andrum is an Instagram content project. This workspace is a simple operating sys
 - Prefer specific ideas over broad motivational language.
 - Make content feel human, grounded, and visually native to Instagram.
 - Use the strategy files before generating content.
-- Save finished drafts in `outputs/`.
+- Save finished drafts in the right subfolder inside `outputs/`.
 - Save useful source material, examples, and notes in `research/`.
 - Save reusable AI instructions in `prompts/`.
+- Do not make the user repeat source folders or save locations when the task type is obvious. Infer the right materials and output folder from the request.
 
 ## Folder Map
 
@@ -21,6 +24,76 @@ Andrum is an Instagram content project. This workspace is a simple operating sys
 - `prompts/`: Reusable prompt templates for AI content work.
 - `research/`: Audience notes, competitor examples, trend observations, and raw insights.
 - `outputs/`: Drafts and finished content.
+
+## Automatic Task Routing
+
+When the user asks for a content or marketing task, infer the task type and automatically choose:
+
+1. The relevant source materials.
+2. The right prompt templates.
+3. The right output folder.
+
+The user should be able to say simple requests like:
+
+- "write an email sequence"
+- "make landing page copy"
+- "create ad hooks"
+- "give me Reel ideas"
+- "write product copy"
+- "make a marketing plan"
+
+Do not ask the user to list folders unless the request is genuinely ambiguous or needs a strategic decision.
+
+### Default Source Materials
+
+Always consider these shared folders as the base context:
+
+- `brand/`
+- `product/`
+- `strategy/`
+- `research/audience/`
+- `prompts/`
+
+Use more specific sources when relevant:
+
+- Instagram work: `strategy/current-instagram-strategy.md`, `strategy/content-performance-rules.md`, `strategy/content-pillars.md`, `strategy/tone-of-voice.md`, and Instagram-related prompt templates in `prompts/`.
+- Email work: `brand/`, `product/`, `strategy/tone-of-voice.md`, `strategy/target-audience.md`, and `research/audience/`.
+- Landing page work: `brand/`, `product/`, `strategy/target-audience.md`, `strategy/tone-of-voice.md`, `research/audience/`, and `research/customer-journey/`.
+- Ads: `brand/`, `product/`, `strategy/content-performance-rules.md`, `strategy/target-audience.md`, and `research/audience/`.
+- Marketing plans and campaigns: `brand/`, `product/`, `strategy/`, `research/audience/`, and `research/customer-journey/`.
+- Scripts: `brand/`, `product/`, `strategy/tone-of-voice.md`, `research/audience/`, and `research/interview-transcripts/` when useful.
+- Product copy: `product/`, `brand/`, `strategy/target-audience.md`, `strategy/tone-of-voice.md`, and `research/customer-journey/`.
+
+### Default Output Folders
+
+Save work automatically based on type:
+
+- Reels: `outputs/instagram/reels/`
+- Carousels: `outputs/instagram/carousels/`
+- Captions: `outputs/instagram/captions/`
+- Stories: `outputs/instagram/stories/`
+- Instagram calendars: `outputs/instagram/content-calendars/`
+- Email: `outputs/email/`
+- Landing pages: `outputs/landing-pages/`
+- Ads: `outputs/ads/`
+- Marketing plans or campaign work: `outputs/marketing/`
+- Scripts: `outputs/scripts/`
+- Product copy: `outputs/product-copy/`
+- Strategy notes created during projects: `outputs/strategy-notes/`
+
+If a request could fit multiple folders, choose the most specific one. For example, a "launch email sequence" belongs in `outputs/email/`, while a full launch plan belongs in `outputs/marketing/`.
+
+### File Naming
+
+Use simple, searchable filenames:
+
+- `YYYY-MM-DD-topic.md`
+- `email-sequence-topic.md`
+- `landing-page-topic.md`
+- `ad-hooks-topic.md`
+- `reel-hooks-topic.md`
+
+Use lowercase words and hyphens when creating new files.
 
 ## Breathwork And Psychology Sources
 
