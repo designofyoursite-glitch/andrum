@@ -518,6 +518,18 @@ Add or confirm these events:
 | `InitiateCheckout` | Measures paid CTA intent |
 | `Purchase` | Needed for profitability analysis |
 
+Implementation update, 2026-06-15:
+
+- `FreePracticeClick` Meta custom event added on free practice CTA/modal open.
+- `free_practice_click` GA4 event already existed and remains active.
+- `FreePracticeFormStart` Meta custom event added on first email input focus or input.
+- `form_start` GA4 event added on first email input focus or input.
+- `RedirectToPractice` Meta custom event added immediately before redirect to Teachable free practice.
+- `redirect_to_practice` GA4 event added immediately before redirect to Teachable free practice.
+- `Lead` Meta standard event remains active after successful MailerLite submit.
+- `InitiateCheckout` Meta standard event remains active on paid checkout clicks.
+- Website implementation commit: `58e9228 Add free practice funnel tracking` in `designofyoursite-glitch/andrum-website`.
+
 Core ratios:
 
 - CTA click rate: `free_practice_click / landing_page_view`
